@@ -298,6 +298,7 @@ header div.night-mode a i {
 }
 #spotlight div.right div.img-container img {
     width: 100%;
+    display: block;
 }
 #show-case {
     padding: 30px 0;
@@ -654,7 +655,6 @@ footer span a:hover {
     color: #f8c247;
     transition: all 1s ease;
 }
-
 @keyframes fade {
     from {
         opacity: .4
@@ -674,11 +674,15 @@ footer span a:hover {
         content: "Marvel Sann";
       }
 }
-@media all and (max-width:981px) {
+@media all and (max-width:1280px) {
+    #spotlight div.content div.change {
+        font-size: 41px;
+    }
+}
+@media all and (max-width:1080px) {
     header div.night-mode {
         display: none;
     }
-
     #spotlight section.wrapper {
         flex-direction: column;
     }
@@ -722,20 +726,13 @@ footer span a:hover {
         width: 100%;
     }
 }
-@media all and (max-width:769px) {
+@media all and (max-width:968px) {
+
 }
-@media all and (max-width:641px) {
-    #spotlight div.content div.change {
-        font-size: 41px;
-    }
-    #contacts div.connect h3 {
-        font-size: 43px;
-    }
-    footer p {
-        font-size: 21px;
-    }
+@media all and (max-width:768px) {
+
 }
-@media all and (max-width:541px){
+@media all and (max-width:640px) {
     header nav ul {
         position: fixed;
         left: -100%;
@@ -746,7 +743,7 @@ footer span a:hover {
         text-align: center;
         border-radius: 10px;
         transition: 0.3s;
-        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);;
+        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
     }
     header nav ul.active {
         left: 0;
@@ -768,10 +765,10 @@ footer span a:hover {
         transform: translateY(-8px) rotate(-45deg);
     }
     #spotlight div.content h3 {
-        font-size: 23px;
+        font-size: 21px;
     }
     #spotlight div.content div.change {
-        font-size: 32px;
+        font-size: 34px;
     }
     #spotlight div.content a.button {
         width: 100%;
@@ -780,24 +777,24 @@ footer span a:hover {
         font-size: 18px;
     }
     footer span {
-        font-size: 18px;
+        font-size: 20px;
     }
 }
-@media all and (max-width:481px) {
+@media all and (max-width:540px) {
     #spotlight div.content h3 {
-        font-size: 16px;
+        font-size: 19px;
     }
     #spotlight div.content div.change {
-        font-size: 26pX;
+        font-size: 30px;
+    }
+    #spotlight div.content p {
+        font-size: 21px;
     }
     #spotlight div.content p {
         font-size: 19px;
     }
-    #spotlight div.content a.button {
-        font-size: 21px;
-    }
-    #show-case div.contents h3 {
-        font-size: 32px;
+    #show-case div.contents div.container i {
+        font-size: 30px;
     }
     #resume div.experiance div.contents div.item div.content div.top h3 {
         font-size: 23px;
@@ -811,9 +808,6 @@ footer span a:hover {
     #resume div.education div.contents div.item div.content div.top small {
         font-size: 14px;
     }
-    #contacts div.connect h3 {
-        font-size: 32px;
-    }
     footer p {
         font-size: 15px;
     }
@@ -821,7 +815,7 @@ footer span a:hover {
         font-size: 15px;
     }
 }
-@media all and (max-width:320px) {
+@media all and (max-width:480px) {
     #spotlight div.content {
         text-align: center;
     }
@@ -837,13 +831,19 @@ footer span a:hover {
     #spotlight div.content p {
         font-size: 17px;
     }
+    #spotlight div.content a.button {
+        font-size: 18px;
+    }
+    #show-case div.contents div.container i {
+        font-size: 23px;
+    }
     #resume div.experiance div.contents div.item div.bg::after {
-        height: 280px;
-        bottom: -280px;
+        height: 240px;
+        bottom: -240px;
     }
     #resume div.education div.contents div.item div.bg::after {
-        height: 280px;
-        bottom: -280px;
+        height: 260px;
+        bottom: -260px;
     }
     #resume div.experiance div.contents div.item div.content div.top {
         align-items: baseline;
@@ -863,5 +863,21 @@ footer span a:hover {
         display: flex;
         justify-content: space-between;
         margin-top: 20px;
+    }
+}
+@media all and (max-width:380px) {
+    #spotlight div.content a.button {
+        font-size: 15px;
+    }
+    #show-case div.contents div.container i {
+        font-size: 18px;
+    }
+    #resume div.experiance div.contents div.item div.bg::after {
+        height: 285px;
+        bottom: -285px;
+    }
+    #resume div.education div.contents div.item div.bg::after {
+        height: 285px;
+        bottom: -285px;
     }
 }
