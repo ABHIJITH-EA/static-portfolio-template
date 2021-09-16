@@ -90,10 +90,6 @@ p{
     font-style: normal;
 
 }
-
-
-
-
 @font-face {
     font-family: 'robotolight';
     src: url('../fonts/roboto-light-webfont.woff2') format('woff2'),
@@ -102,10 +98,6 @@ p{
     font-style: normal;
 
 }
-
-
-
-
 @font-face {
     font-family: 'robotobold';
     src: url('../fonts/roboto-bold-webfont.woff2') format('woff2'),
@@ -114,10 +106,6 @@ p{
     font-style: normal;
 
 }
-
-
-
-
 @font-face {
     font-family: 'robotoblack';
     src: url('../fonts/roboto-black-webfont.woff2') format('woff2'),
@@ -126,10 +114,6 @@ p{
     font-style: normal;
 
 }
-
-
-
-
 @font-face {
     font-family: 'robotoregular';
     src: url('../fonts/roboto-regular-webfont.woff2') format('woff2'),
@@ -138,7 +122,6 @@ p{
     font-style: normal;
 
 }
-
 header {
     height: 100px;
     padding: 20px 0;
@@ -154,13 +137,15 @@ header h1 {
 header h1 a {
     display: flex;
     align-items: baseline;
+    transition: 500ms linear;
 }
 header h1 a i {
     margin-right: 10px;
+    font-size: 32px;
 }
 header h1 a:hover {
     color: #f8c145;
-    transition: all .7s;
+    transition: all 500ms linear;
 }
 header nav {
 
@@ -179,7 +164,7 @@ header nav ul li:last-child{
 }
 header nav ul li a {
     color: #818181;
-    height: 1.3em;
+    height: 1.5em;
     display: flex;
     flex-direction: column;
     overflow: hidden;
@@ -191,15 +176,15 @@ header nav ul li a::after {
 }
 header nav ul li a::before {
     content: attr(data-text);
-    color: 818181;
+    color: #818181;
     transition: transform 0.3s;
 } 
 header nav ul li a:hover::before {
-    transform: translateY(-1.15em);
+    transform: translateY(-1.5em);
 }
   
 header nav ul li a:hover::after {
-    transform: translateY(-1.15em);
+    transform: translateY(-1.5em);
 }
 header nav div.hamburger {
     display: none;
@@ -210,7 +195,6 @@ header nav div.hamburger span.bar {
     width: 25px;
     height: 3px;
     margin: 5px auto;
-    -webkit-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
     background-color: #101010;
 }
@@ -226,10 +210,14 @@ header div.night-mode a {
 }
 header div.night-mode a i {
     margin-right: 20px;
+    font-size: 32px;
     transform: rotate(-20deg);
 }
 .dark-mode {
     background: #000;
+    color: #fff;
+}
+.dark-mode-color {
     color: #fff;
 }
 #spotlight {
@@ -252,14 +240,17 @@ header div.night-mode a i {
     align-items: baseline;
     font-family: 'open_sansextrabold';
     font-size: 43px;
+    position: relative;
 }
 #spotlight div.content h4 {
     margin-top: 30px;
     margin-right: 20px;
 }
-#spotlight div.content div.change #text-change {
+#spotlight div.content div.change span.text-change::after {
+    content: "";
     color:#f8c145;
     display: block;
+    animation: text-change 3s linear infinite alternate;
 }
 #spotlight div.content p {
     max-width: 700px;
@@ -273,10 +264,11 @@ header div.night-mode a i {
     display: inline-block;
     margin-top: 20px;
     font-family: 'robotobold';
-    font-size: 25px;
+    font-size: 21px;
     padding: 15px 25px;
     border-radius: 30px;
     text-align: center;
+    transition: 500ms linear;
 }
 #spotlight div.content a.button.resume {
     background: #eee;
@@ -288,12 +280,16 @@ header div.night-mode a i {
 }
 #spotlight div.content a.button.quote {
     background: #474559;
-}
-#spotlight div.content a.button:hover {
-    background: #f8c145;
     color: #fff;
+}
+#spotlight div.content a.button.quote:hover {
+    background: #f8c145;
     transition: all 0.7s ease-in-out;
-}   
+}
+#spotlight div.content a.button.resume:hover {
+    color: #f8c145;
+    transition: all 0.7s ease-in-out;
+}      
 #spotlight div.right {
     width: 40%;
 }
@@ -323,6 +319,7 @@ header div.night-mode a i {
 }
 #show-case div.contents div.container i {
     cursor: pointer;
+    transition: 500ms linear;
 }
 #show-case div.contents div.container div.slide-container {
 
@@ -346,7 +343,7 @@ header div.night-mode a i {
     transition: all 0.7s ease-in-out;
 }
 #resume {
-    padding: 30px;      
+    padding: 30px;
 }
 #resume section.wrapper {
     display: flex;
@@ -484,6 +481,14 @@ header div.night-mode a i {
     margin-top: 10px;
     max-width: 700px;
 }
+#resume div.education div.contents div.item div.content p a {
+    color: #2f7af6;
+}
+#resume div.education div.contents div.item div.content p a:hover {
+    color: #f8c247;
+    font-weight: bold;
+    transition: all 1s ease;
+}
 #contacts {
     padding: 20px 0;
 }
@@ -514,8 +519,13 @@ header div.night-mode a i {
     color: #fff;
     font-style: normal;
     font-weight: bold;
+    font-size: 23px;
+}
+#contacts div.map div.bottom div.right address a:hover:last-child {
+    color: #f8c247;
 }
 #contacts div.map div.bottom div.left {
+    position: relative;
 }
 #contacts div.map div.bottom div.left i {
     display: flex;
@@ -523,6 +533,49 @@ header div.night-mode a i {
     margin-bottom: 10px;
     color: #fff;
     align-items: center;
+    font-size: 23px;
+}
+#contacts div.map div.bottom div.left i:hover {
+    color: #f8c247;
+}
+#contacts div.map div.bottom div.left div.highlights {
+    position: absolute;
+}
+#contacts div.map div.bottom div.left div.highlights span.highlight {
+    background: #000;
+    color: #fff;
+    padding: 10px;
+    width: 150px;
+    text-align: center;
+    position: relative;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    left: -170px;
+    top:-150px;
+}
+#contacts div.map div.bottom div.left div.highlights span.highlight:first-child {
+    left: -165px;
+    top:-112px;
+    display: none;
+}
+#contacts div.map div.bottom div.left div.highlights span.highlight:nth-child(2) {
+    left: -165px;
+    top:-80px;
+    display: none;
+}
+#contacts div.map div.bottom div.left div.highlights span.highlight:nth-child(3) {
+    left: -165px;
+    top:-45px;
+    display: none;
+}
+#contacts div.map div.bottom div.left div.highlights span.highlight::after {
+    content: "";
+    position: absolute;
+    top: 10px;
+    right:-20px;
+    z-index: 1;
+    border: solid 10px transparent;
+    border-left-color: #000;
 }
 #contacts div.connect {
     width: 48%;
@@ -542,11 +595,14 @@ header div.night-mode a i {
     font-size: 18px;
     outline: none;
 }
+#contacts div.connect form input:focus {
+    border: 1px solid #f8c247;
+}
 #contacts div.connect form input[type="text"] {
     margin-right: 10px;
 }
 #contacts div.connect form input[type="email"] {
-
+    
 }
 #contacts div.connect form input[type="submit"] {
     background: #f8c247;
@@ -560,6 +616,11 @@ header div.night-mode a i {
     position: absolute;
     bottom: -80px;
     right: 0;
+    transition: 500ms linear;
+}
+#contacts div.connect form input[type="submit"]:hover {
+    background: #474559;
+    transition: all 2s ease;
 }
 #contacts div.connect form textarea {
     border: 1px solid #e6e9ec;
@@ -567,6 +628,9 @@ header div.night-mode a i {
     width: 100%;
     padding: 10px;
     font-size: 18px;
+}
+#contacts div.connect form textarea:focus {
+    border: 1px solid #f8c247;
 }
 footer {
     padding: 20px;
@@ -584,6 +648,11 @@ footer span {
 footer span a {
     font-weight: bold;
     color: #3a90f7;
+    transition: 500ms linear;
+}
+footer span a:hover {
+    color: #f8c247;
+    transition: all 1s ease;
 }
 
 @keyframes fade {
@@ -594,8 +663,18 @@ footer span a {
         opacity: 1
     }
 }
-
-@media all and (max-width:980px) {
+@keyframes text-change {
+    0% {
+        content: "UI Specialist";
+      }
+      50% {
+        opacity: 0;
+      }
+      100% {
+        content: "Marvel Sann";
+      }
+}
+@media all and (max-width:981px) {
     header div.night-mode {
         display: none;
     }
@@ -643,9 +722,20 @@ footer span a {
         width: 100%;
     }
 }
-@media all and (max-width:768px) {
+@media all and (max-width:769px) {
 }
-@media all and (max-width:540px){
+@media all and (max-width:641px) {
+    #spotlight div.content div.change {
+        font-size: 41px;
+    }
+    #contacts div.connect h3 {
+        font-size: 43px;
+    }
+    footer p {
+        font-size: 21px;
+    }
+}
+@media all and (max-width:541px){
     header nav ul {
         position: fixed;
         left: -100%;
@@ -693,7 +783,7 @@ footer span a {
         font-size: 18px;
     }
 }
-@media all and (max-width:480px) {
+@media all and (max-width:481px) {
     #spotlight div.content h3 {
         font-size: 16px;
     }
