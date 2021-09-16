@@ -42,7 +42,6 @@ a:hover,.submit:hover{
 p{
 	line-height:1.6em;
 	font-size: 16px;
-	/* font-family: "Circular-Std-Regular", Arial; */
 	font-weight: 400;
 }
 .wrapper {
@@ -138,6 +137,7 @@ header h1 a {
     display: flex;
     align-items: baseline;
     transition: 500ms linear;
+    position: relative;
 }
 header h1 a i {
     margin-right: 10px;
@@ -182,14 +182,15 @@ header nav ul li a::before {
 header nav ul li a:hover::before {
     transform: translateY(-1.5em);
 }
-  
 header nav ul li a:hover::after {
     transform: translateY(-1.5em);
 }
 header nav div.hamburger {
     display: none;
+    position: absolute;
+    right: 10px;
+    top: 20px;
 }
-
 header nav div.hamburger span.bar {
     display: block;
     width: 25px;
@@ -680,8 +681,11 @@ footer span a:hover {
     }
 }
 @media all and (max-width:1080px) {
-    header div.night-mode {
+    header div.night-mode span.colorModeText {
         display: none;
+    }
+    header nav ul li {
+        margin-right: 15px;
     }
     #spotlight section.wrapper {
         flex-direction: column;
@@ -726,7 +730,7 @@ footer span a:hover {
         width: 100%;
     }
 }
-@media all and (max-width:968px) {
+@media all and (max-width:980px) {
 
 }
 @media all and (max-width:768px) {
@@ -734,7 +738,7 @@ footer span a:hover {
 }
 @media all and (max-width:640px) {
     header nav ul {
-        position: fixed;
+        position: absolute;
         left: -100%;
         top: 5rem;
         flex-direction: column;
@@ -749,7 +753,7 @@ footer span a:hover {
         left: 0;
     }
     header nav ul li {
-        margin: 2.5rem 0;
+        margin: 0.5rem 0;
     }
     header nav div.hamburger {
         display: block;
@@ -866,6 +870,10 @@ footer span a:hover {
     }
 }
 @media all and (max-width:380px) {
+    header nav div.hamburger {
+        right: 38px;
+        top: 50px;
+    }
     #spotlight div.content a.button {
         font-size: 15px;
     }

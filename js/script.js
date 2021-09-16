@@ -31,6 +31,7 @@ window.addEventListener("load", () => {
         document.querySelector("header div.night-mode a i").classList.toggle("fa-sun");
         document.querySelector("header div.night-mode a").classList.toggle("dark-mode-color");
         document.querySelector("header h1 a").classList.toggle("dark-mode-color");
+        document.querySelector("header nav div.hamburger span.bar").classList.toggle("dark-mode-color");
     });
     leftArrow.addEventListener("click", ()=>{
         showSlides(imageIndex -= 1);
