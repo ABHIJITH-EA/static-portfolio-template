@@ -9,6 +9,8 @@ window.addEventListener("load", () => {
     let dribbleIcon = document.querySelector("#contacts div.map div.bottom div.left i.fa-globe");
     let instagramIcon = document.querySelector("#contacts div.map div.bottom div.left i.fa-instagram");
     let youtubeIcon = document.querySelector("#contacts div.map div.bottom div.left i.fa-youtube");
+    let year = document.getElementById("year");
+    year.innerText = new Date().getFullYear()
     function showSlides(n) {
         let i;
         let slides = document.getElementsByClassName("slide");
@@ -31,7 +33,9 @@ window.addEventListener("load", () => {
         document.querySelector("header div.night-mode a i").classList.toggle("fa-sun");
         document.querySelector("header div.night-mode a").classList.toggle("dark-mode-color");
         document.querySelector("header h1 a").classList.toggle("dark-mode-color");
-        document.querySelector("header nav div.hamburger span.bar").classList.toggle("dark-mode-color");
+        document.querySelectorAll("header nav div.hamburger span.bar").forEach((element)=> {
+            element.classList.toggle("hamburger-color");
+        });
     });
     leftArrow.addEventListener("click", ()=>{
         showSlides(imageIndex -= 1);
